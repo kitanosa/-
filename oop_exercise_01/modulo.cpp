@@ -58,6 +58,7 @@ public:
 
 int main() {
 	setlocale(LC_ALL, "Russian");
+	
 	int a, b, N;
 	cout << "Введите два числа и модуль" << "\n";
 	cin >> a >> b >> N;
@@ -65,10 +66,11 @@ int main() {
 		cout << "Модуль введен неверно" << "\n";
 		cin >> N;
 	}
+	
 	Modulo Example(a, b);
 	Example.sum(N);
-	cout << "Первое число = " << Example.first_number << " Второе число = " << Example.second_number <<
-		" Модуль = " << N << "\n" << "Сумма = " << Example.get_sum() << "\n";
+	cout << "Первое число = " << Example.first_number << " Второе число = " << Example.second_number <<" Модуль = " << N << "\n";
+	cout << "Сумма = " << Example.get_sum() << "\n";
 	Example.diff(N);
 	cout << "Разность = " << Example.get_diff() << "\n";
 	Example.mult(N);
