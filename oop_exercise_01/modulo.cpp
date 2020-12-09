@@ -7,7 +7,7 @@ class Modulo // программисты предпочитают называт
 private:
 		int result;
 
-	public:
+	public: // Функции, определенные внутри класса, называются методами.
 		int number, module_N;
 
 		Modulo(int a, int N) {
