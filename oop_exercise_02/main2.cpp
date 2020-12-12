@@ -19,22 +19,22 @@ class Complex{
             r = newr;
             phi = newphi;
         }
-        bool operator==(Complex &other){// Скрытый указатель *this
-            return (this->r == other.r) && (this->phi == other.phi);
-        }
-        bool operator!=(Complex &other){// Синтаксис перегрузки операторов очень похож на определение функции с именем operator
+        bool operator==(const Complex &other){// Скрытый указатель *this. const здесь чтобы члучайно ничего не поменяли. Передаем по адресу чтобы не выделять память
+            return (this->r == other.r) && (this->phi == other.phi);//&other мы передаем адрес чтобы не копировать значение а пользоваться ссылкой на тот же самый переданный элемент
+        }// но код работает даже если other передавать и НЕ по ссылке
+        bool operator!=(const Complex &other){// Синтаксис перегрузки операторов очень похож на определение функции с именем operator
             return !((this->r == other.r) && (this->phi == other.phi));
         }
-        bool operator>(Complex &other){
+        bool operator>(const Complex &other){
             return (this->r * cos(this->phi)) > (other.r * cos(other.phi));
         }
-        bool operator>=(Complex &other){
+        bool operator>=(const Complex &other){
             return (this->r * cos(this->phi)) >= (other.r * cos(other.phi));
         }
-        bool operator<(Complex &other){
+        bool operator<(const Complex &other){
             return (this->r * cos(this->phi)) < (other.r * cos(other.phi));
         }
-        bool operator<=(Complex &other){
+        bool operator<=(const Complex &other){
             return (this->r * cos(this->phi)) <= (other.r * cos(other.phi));
         }
         void SetR(double radius){
@@ -53,7 +53,7 @@ class Complex{
         double GetAngle() const{
             return this->phi;
         }
-        friend std::istream& operator>>(std::istream &in, Complex &complex);
+        friend std::istream& operator>>(std::istream &in, Complex &complex);// фрэндим чтобы пользоваться приватными элементами
 
 };
 
@@ -72,7 +72,7 @@ Complex Conj(Complex x){
     x.SetAngle(res);
     return x;
 }
-Complex operator+(Complex one, Complex other){
+Complex operator+(Complex one, Complex other){// оператор перегрузки используется в сложении векторов например
     Complex res;
     double  fpart = one.GetR() * cos(one.GetAngle()) + other.GetR() * cos(other.GetAngle());// first part
     double  spart = one.GetR() * sin(one.GetAngle()) + other.GetR() * sin(other.GetAngle());
