@@ -54,7 +54,9 @@ class Complex{
             return this->phi;
         }
         friend std::istream& operator>>(std::istream &in, Complex &complex);// фрэндим чтобы пользоваться приватными элементами
-
+    // френдить надо чтобы другому классу либо функции было доступны поля protected и privat
+    // френдить можно как классы так и функции в других классах по отдельности
+    // подробнее в "Дружеские функции класса C++"
 };
 
 void Check_bounds(double angle){
