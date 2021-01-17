@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kitanosa/labs/oop/oop4/figures.h
+iostream
+-
+string
+-
+
+/home/kitanosa/labs/oop/oop4/functions.h
+iostream
+-
+tuple
+-
+math.h
+-
+
+/home/kitanosa/labs/oop/oop4/main.cpp
+figures.h
+/home/kitanosa/labs/oop/oop4/figures.h
+functions.h
+/home/kitanosa/labs/oop/oop4/functions.h
+iostream
+-
+tuple
+-
+

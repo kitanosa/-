@@ -1,0 +1,3 @@
+/home/kitanosa/labs/oop/oop4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kitanosa/labs/oop/oop4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kitanosa/labs/oop/oop4/cmake-build-debug/CMakeFiles/oop4.dir
